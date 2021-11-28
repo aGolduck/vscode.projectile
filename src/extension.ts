@@ -82,7 +82,7 @@ export function activate(context: vscode.ExtensionContext) {
                 projects[root] = true
                 context.globalState.update(stateKey, projects)
                 context.workspaceState.update(stateKeyCurrentProject, root)
-                vscode.window.showInformationMessage(root)
+                console.log('projectile root for ', doc.fileName, ':', root)
                 workspace.updateWorkspaceFolders(workspace.workspaceFolders ? workspace.workspaceFolders.length : 0, null, { uri: vscode.Uri.file(root) });
             } catch (e) {
             }
